@@ -1,34 +1,37 @@
 //document.body.innerHTML = "Hello world!";
-var colorSelector ="";
+var colorSelector = 0;
 
-        for(var x = 0; x < 50; x++){
+        for(var x = 0; x < 40; x++){
             var row = document.createElement('div');
             row.className='row';
-            for(var y=0;y<50;y++) {
+            for(var y=0;y<60;y++) {
                 const col = document.createElement('div');
                 col.className = 'column';
                 col.addEventListener('click',()=>{
-                    col.style.backgroundColor='red';
+                    col.style.backgroundColor=colorSelector;
                 });
                 row.appendChild(col);
              }
             document.body.appendChild(row);
         }
 
+    var breakVal = document.createElement('br')
+    row.appendChild(breakVal);
+
+    const colorsValue = ['red','blue','green','Chocolate ','DarkGray ','DarkKhaki' ,'yellow','pink','black','purple','white','CornflowerBlue','BlanchedAlmond','BlueViolet']
 
 
-    const colors = document.createElement('div');
-    colors.className = 'column';
-    colors.style.backgroundColor='green';
-    colors.addEventListener('click',()=>{
-        colorSelector=colors.style.backgroundColor;
-    });
-     alert(colorSelector);
-    const colors1 = document.createElement('div');
-    colors1.className = 'column';
-    colors1.style.backgroundColor='yellow';
+    for(let i =0;i<=colorsValue.length;i++){
+        const colors = document.createElement('div');
+        colors.className = 'column';
+        colors.style.backgroundColor=colorsValue[i];
+        colors.addEventListener('click',()=>{
+            colorSelector = colorsValue[i];
+        });
+        row.appendChild(colors);
+    }
 
-    row.appendChild(colors);
-    row.appendChild(colors1);
+
+
 
 
